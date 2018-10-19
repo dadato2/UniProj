@@ -22,7 +22,7 @@ print('You have been travelling for a long time. You have two water bottles and 
 while True:
     action = str(input('What do you do: '))
 
-    if action == "walk" or action =="run":
+    if action == "walk" or action == "run":
         print("You are hungry and thirsty. Walking seems difficult at the moment.")
         print("Available resources: ")
         print("water: ", water)
@@ -38,3 +38,25 @@ while True:
 
     elif action == 'rest' or action == 'sit' or action == 'sleep':
         print('You can\'t rest now. You have a long trip ahead of you.')
+
+    elif action == 'help' or action == 'help me':
+        print('Try eating some food or drinking some water\n',
+              "to regain some energy.")
+
+
+print("  ,/         \\.\n",
+      " ((           ))\n",
+      "   )')     (`(\n",
+      " ,'`/       \\,`.\n",
+      " \\-'\\,-'*`-./`-/\n",
+      "  \\-')     (`-/\n",
+      "  /`'       `'\\\n",
+      " (   _      _  )\n",
+      " |  `.\\   /,'  |\n",
+      " |    `\\ /'    |\n",
+      "  \\           /\n",
+      "   \\         /\n",
+      "    `.     ,'\n",
+      "      `-.-'\n")
+
+monster1 = ""

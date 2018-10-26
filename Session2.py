@@ -49,7 +49,7 @@ _________ .__          .__       _________                ________________
 
 for i in range(1, 10):
     for j in range(0, i):
-        print("*", end = " ")
+        print("*", end=" ")
     print()
 
 
@@ -59,7 +59,7 @@ count = 0
 
 while True:
     string = str(input())
-    if string  == 'stop':
+    if string == 'stop':
         break
     newList.append(string)
 
@@ -70,10 +70,6 @@ for i in newList:
 print(count)
 
 input()
-
-
-
-
 
 myList = ['dagger', 'axe', 'sword', 'shield', 'sausage']
 print(myList[random.randrange(0, len(myList))])

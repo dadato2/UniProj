@@ -1,5 +1,20 @@
+myDict = {'Name': ['Peter', 'Pan']}
+newl = myDict["Name"]
+print(newl[1])
 
+input('End of section, press enter to continue:')
 
+inter = ('', 'f', '', 'fff', 'ff')
+inerer = []
+for i in inter:
+    if i:
+        inerer.append(i)
+print(inerer)
+
+input('End of section, press enter to continue:')
+
+ui = str(input("Name: "))
+print(' '.join(ui) + " ? ? ?")
 
 input('End of section, press enter to continue:')
 

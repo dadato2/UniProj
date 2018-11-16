@@ -3,3 +3,5 @@ newdict = {j: i*2 for j,i in dic1.items()}
 print(newdict)
 
 print('New change')
+
+print('Newer change')

@@ -4,7 +4,6 @@ import time
 import random
 system('cls')
 
-
 # Functions
 def newprint(a):
     for char in a:
@@ -13,16 +12,57 @@ def newprint(a):
         time.sleep(0.02)
     print("")
 
+# constants
+action = ''
+error = 'Command not available. You can type "help" for example options.'
+listYes = ("yes", "yep","ya","noice","yas","yaas","yaaas","yaaaas","yaaaaas","correct", "yee", "ye", "yuhuh", "y", "ok", "okey dokey","okie dokie","positive")
+listNo = ("no","nope","n","nuhuh","newp","negative","nein","nicht","never")
+listCheckINv = ("check inv", "inv","check inventory","inventory")
 
-def attack(name, hp, damage, defence, turn, monsterSprite):
+# Health and vitals
+thirst = 10   # max 10
+hunger = 10   # max 10
+maxHealth = 10
+health = 10
+attackDamage = 4
+attackDefence = 0
+
+# Resources
+water = 2
+food = 1
+acorns = 0
+sticks = 0
+matches = 0
+flowers = 0
+
+# Monsters
+monster1 = "\n  ,/         \\.\n" " ((           ))\n" "   )')     (`(\n" " ,'`/       \\,`.\n" " \\-'\\,-'*`-./`-/\n" "  \\-')     (`-/\n" "  /`'       `'\\\n" " (   _      _  )\n" " |  `.\\   /,'  |\n" " |    `\\ /'    |\n" "  \\           /\n" "   \\         /\n" "    `.     ,'\n" "      `-.-'\n"
+
+
+def attack(name, hp, damage, defence, maxdefence, turn, monsterSprite):
+    global health
+    global attackDefence
+    baseattack = damage
+    time.sleep(2)
     system('cls')
     if monsterSprite == 0:
         print(monster1)
         newprint("A wild " + name + " has appeared!")
     while True:
         if hp <= 0:
+            newprint("You have defeated  the " + name + "!")
+            health = maxHealth
+            benefit = random.randrange(0,5)
+            if benefit == 5:
+                health += 1
+                newprint("Your health goes up by one! Current health: " + str(health))
+            benefit = random.randrange(0, 7)
+            if benefit == 7:
+                attackDefence += 1
+                newprint("Your defence goes up by one! Current defence: " + str(attackDefence))
+                time.sleep(1.5)
             break
-        #Player's Turn
+        # Player's Turn
         if turn == True:
             randomWaitMe = random.randrange(0, 10)
             if randomWaitMe == 0:
@@ -47,40 +87,65 @@ def attack(name, hp, damage, defence, turn, monsterSprite):
                 newprint("The " + name + " just remembered a joke its son said the other day.")
             elif randomWaitMe == 10:
                 newprint("The " + name + " is eagerly awaiting your move.")
-            action = input()
+            notdone = True
+            while notdone == True:
+                newprint("What do you do?")
+                action = input()
+                if action == 'help':
+                    newprint("You can attack the monster, defend ,or heal yourself. "
+                             "You can also use a special item or your slingshot."
+                             "\n( Commands : 'attack', 'defend', 'heal', 'item', 'slingshot')")
+                elif action == 'attack':
+                    damageYouDo = attackDamage-defence + random.randrange(-1, 1)
+                    newprint("You do " + str(damageYouDo) + " points of damage.")
+                    hp -= damageYouDo
+                    break
+                elif action == "defend":
+                    if baseattack-damage > baseattack/3:
+                        damage -= 1
+                        newprint("You focus your mind a bit more and are more aware of the " + name + "'s attacks. Defence+")
+                    else:
+                        newprint("You can't focus more on the " + name + ".")
+                    break
+                elif action == 'heal':
+                    if health == maxHealth:
+                        newprint("You are already at max health.")
+                    else:
+                        newprint("You have " + str(water) + " water and " + str(food) + "food. How will you heal yourself?"
+                                                                              " ('cancel' to go back)\n")
+                        while True:
+                            newaction = str(input())
+                            if newaction == 'water':
+                                health += maxHealth/3
+                                if health > maxHealth:
+                                    health = maxHealth
+                                break
+                            elif newaction == 'food':
+                                health += maxHealth / 2
+                                if health > maxHealth:
+                                    health = maxHealth
+                                break
+                            elif newaction == 'cancel':
+                                break
 
-        #Enemy Turn
+            # Enemy Turn
             enemyAction = random.randrange(0, 4)
-            if enemyAction == 0:
+            if enemyAction == 0 and defence<maxdefence:
+                newprint("The "+ name + " defends. Its defence raises by one")
                 defence += 1
+            elif enemyAction == 0 and defence>=maxdefence:
+                newprint("The "+ name + " Tries to defend, but it has already defended itself too much.")
+
+            if enemyAction == 1:
+                enemyDealsDamage = damage-attackDefence
+                if enemyDealsDamage < 0:
+                    enemyDealsDamage = 0
+                newprint(name + " deals " + str(enemyDealsDamage) + " points of damage. "
+                          "Your health is now " + str(health) + ".")
+            # After Both Turns
+            print()
 
 
-
-
-# constants
-action = ''
-error = 'Command not available. You can type "help" for example options.'
-listYes = ("yes", "yep","ya","noice","yas","yaas","yaaas","yaaaas","yaaaaas","correct", "yee", "ye", "yuhuh", "y", "ok", "okey dokey","okie dokie","positive")
-listNo = ("no","nope","n","nuhuh","newp","negative","nein","nicht","never")
-listCheckINv = ("check inv", "inv","check inventory","inventory")
-
-# Health and vitals
-thirst = 10   # max 10
-hunger = 10   # max 10
-maxHealth = 10
-health = 10
-attack = 4
-
-# Resources
-water = 2
-food = 1
-acorns = 0
-sticks = 0
-matches = 0
-flowers = 0
-
-# Monsters
-monster1 = "\n  ,/         \\.\n" " ((           ))\n" "   )')     (`(\n" " ,'`/       \\,`.\n" " \\-'\\,-'*`-./`-/\n" "  \\-')     (`-/\n" "  /`'       `'\\\n" " (   _      _  )\n" " |  `.\\   /,'  |\n" " |    `\\ /'    |\n" "  \\           /\n" "   \\         /\n" "    `.     ,'\n" "      `-.-'\n"
 
 # Start of story.
 newprint('You have been travelling for a long time. You have two water bottles and a sandwich.'
@@ -141,6 +206,7 @@ while True:
         newprint(error)
 newprint("\nWhile thinking about practicing your slingshot skills, you notice a presence around you.\n"
          "You look to your right and see a peculiar face watching you.")
-attack("rabbit", 10, 0, 0, True, 0)
+
+attack("rabbit", 10, 0, 0, 1, True, 0)
 
 

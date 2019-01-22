@@ -14,9 +14,48 @@ def newprint(a):
     print("")
 
 
-def attack(name, hp, damage, defence):
+def attack(name, hp, damage, defence, turn, monsterSprite):
+    system('cls')
+    if monsterSprite == 0:
+        print(monster1)
+        newprint("A wild " + name + " has appeared!")
     while True:
-        action = input()
+        if hp <= 0:
+            break
+        #Player's Turn
+        if turn == True:
+            randomWaitMe = random.randrange(0, 10)
+            if randomWaitMe == 0:
+                newprint("The " + name + " looks like it wants to eat you.")
+            elif randomWaitMe == 1:
+                newprint("The " + name + " waits in anticipation.")
+            elif randomWaitMe == 2:
+                newprint("The " + name + " tells its family that the battle will be over soon.")
+            elif randomWaitMe == 3:
+                newprint("The " + name + " remembers all of its happy moments.")
+            elif randomWaitMe == 4:
+                newprint("The " + name + " gives out a chilling battlecry.")
+            elif randomWaitMe == 5:
+                newprint("The " + name + " looks pretty bored waiting for your turn.")
+            elif randomWaitMe == 6:
+                newprint("The " + name + " has never seen someone who looks as scared as you.")
+            elif randomWaitMe == 7:
+                newprint("The " + name + " will tell its friends how it defeated you.")
+            elif randomWaitMe == 8:
+                newprint("The " + name + " was about to open a small business before it stumbled into you.")
+            elif randomWaitMe == 9:
+                newprint("The " + name + " just remembered a joke its son said the other day.")
+            elif randomWaitMe == 10:
+                newprint("The " + name + " is eagerly awaiting your move.")
+            action = input()
+
+        #Enemy Turn
+            enemyAction = random.randrange(0, 4)
+            if enemyAction == 0:
+                defence += 1
+
+
+
 
 # constants
 action = ''
@@ -102,6 +141,6 @@ while True:
         newprint(error)
 newprint("\nWhile thinking about practicing your slingshot skills, you notice a presence around you.\n"
          "You look to your right and see a peculiar face watching you.")
-print(monster1)
+attack("rabbit", 10, 0, 0, True, 0)
 
 

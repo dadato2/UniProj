@@ -7,15 +7,34 @@ system('cls')
 # constants
 action = ''
 error = 'Command not available. You can type "help" for example options.'
+listDirections = ("up", "down", "left", "right", "north", "south", "east", "west")
 listYes = ("yes", "yep", "ya", "noice", "yas", "yaas", "yaaas", "yaaaas", "yaaaaas",
            "correct", "yee", "ye", "yuhuh", "y", "ok", "okey dokey","okie dokie","positive")
 listNo = ("no", "nope", "n", "nuhuh", "newp", "negative", "nein", "nicht", "never")
 listCheckINv = ("check inv", "inv", "check inventory", "inventory")
-listItems = ["honey", "sheep", "flower", "cheese", "carrot"]
-listMonsters = ("rabbit", "bee", "rat", "bear", "wolf")
-weaknessDictionary = {"rabbit": "carrot", "bee": "flower", "rat": "cheese", "bear": "honey", "wolf": "sheep"}
-spriteDictionary = {"rabbit": 0, "bee": 1, "rat": 2, "bear": 3, "wolf": 4}
-firstSling = False    # True
+listOfItems = ["honey", "sheep", "flower", "cheese", "carrot", "angelic power"]
+listItems = []
+listMonsters = ("rabbit", "bee", "rat", "bear", "wolf", "devil")
+weaknessDictionary = {"rabbit": "carrot", "bee": "flower", "rat": "cheese", "bear": "honey", "wolf": "sheep",
+                      "devil": "angelic power"}
+spriteDictionary = {"rabbit": 0, "bee": 1, "rat": 2, "bear": 3, "wolf": 4, "devil": 5}
+
+listYouDoAction = ["You pass by", "You see", "You can smell", "You are imagining", "You have been spotted by",
+                   "You think you saw", "Behind you there is", "You are fascinated by", "You have read in a book about",
+                   "You really want to tell your friends about"]
+listYouDoAdjective = ["an adorable", "an old", "a rustic", "a funny-looking", "a friendly", "a terrifying", "a haunted",
+                      "the only existing", "a fake", "a gooey", "a dancing", "a floating", "a blue", "a red",
+                      "a strangely shaped", "a green", "a transparent"]
+listYouDoObject = ["donkey", "well", "rubick's cube", "picture of Mona Lisa", "thing", "knight", "monster", "friend",
+                   "television", "cellphone", "pirate", "goop", "cloud", "grass", "sword", "youtube video", "card",
+                   "card game", "rhetoric question", "smelly sock", "flamingo", "gaming console", "rock"]
+listYouDoPlace = ["inside of", "right next to", "that looks like", "above", "that reminds you of", "under",
+                  "studying about", "reading a book about", "talking to", "looking at you from",
+                  "that your mother gave you when you both saw", "that you will remember as if it was"]
+listYouDoNextObject = ["a mountain", "the sky", "a museum", "a cloud", "a video game", "you", "a gnome's hat",
+                       "a cave", "a river", "the Milky Way", "a bird's nest", "the forest you were in just now",
+                       "a peculiar mushroom", "a computer desk", "a deadly bomb", "a wizard", "a deck of cards"]
+firstSling = True    # True
 
 
 # difficulty
@@ -42,8 +61,14 @@ matches = 0
 flowers = 0
 
 # Monsters
-monster1 = "\n  ,/         \\.\n" " ((           ))\n" "   )')     (`(\n" " ,'`/       \\,`.\n" " \\-'\\,-'*`-./`-/\n" "  \\-')     (`-/\n" "  /`'       `'\\\n" " (   _      _  )\n" " |  `.\\   /,'  |\n" " |    `\\ /'    |\n" "  \\           /\n" "   \\         /\n" "    `.     ,'\n" "      `-.-'\n"
-
+monsterimages = {0: "             ,\\\n             \\\\\\,_\n              \\` ,\\\n         __,.-\" =__)\n       .\"        )\n    ,_/   ,    \\/\\_\n    \\_|    )_-\\ \\_-`\n       `-----` `--`\n",
+                 1: "                .\' \'.            __\n       .        .   .           (__\_\n        .         .         . -{{_(|8)\n          ' .  . ' ' .  . '     (__/\n",
+                 2: "              _..----.._    _\n            .\'  .--.    \"-.(0)_\n\'-.__.-\'\"\'=:|   ,  _)_ \\__ . c\\\'-..\n             \'\'\'------\'---\'\'---\'-\"\n",
+                 3: "    .--.              .--.\n   : (\\ \". _......_ .\" /) :\n    \\'.    `        `    .\'\n     /\'   _        _   `\\\n    /     0}      {0     \\\n   |       /      \\       |\n   |     /\'        `\     |\n    \\   | .  .==.  . |   /\n     \'._ \\.\' \\__/ \'./ _.\'\n     /  ``\'._-\'\'-_.\'``  \\\n",
+                 4: "                        ,     ,\n                        |\\---/|\n                       /  , , |\n                  __.-\'|  / \\ /\n         __ ___.-\'        ._O|\n      .-\'  \'        :      _/\n     / ,    .        .     |\n    :  ;    :        :   _/\n    |  |   .\'     __:   /\n    |  :   /\'----\'| \\  |\n    \\  |\\  |      | /| |\n     \'.\'| /       || \\ |\n     | /|.\'       \'.l \\\\_\n     || ||             \'-\'\n     \'-\'\'-\'\n",
+                 5: "\n  ,/         \\.\n" " ((           ))\n" "   )')     (`(\n" " ,'`/       \\,`.\n" " \\-'\\,-'*`-./`-/\n" "  \\-')     (`-/\n" "  /`'       `'\\\n" " (   _      _  )\n" " |  `.\\   /,'  |\n" " |    `\\ /'    |\n" "  \\           /\n" "   \\         /\n" "    `.     ,'\n" "      `-.-'\n",
+                 6: ""}
+# all ascii art taken from https://www.asciiart.eu/
 
 # Functions
 def newprint(a):
@@ -87,6 +112,8 @@ def showweakness(name):
         newprint("The bear puts its hand in the jar of honey and it gets all sticky. It runs off, embarrassed.")
     elif name == "wolf":
         newprint("The wolf doesn't understand how you took a sheep out of your pocket and runs off feeling scared.")
+    elif name == "devil":
+        newprint("The devil melts to the sight of the angelic power! Good thing you had one in handy!")
 
 
 def doomScreen():
@@ -107,21 +134,20 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
     turn = thisturn
     baseattack = damage
     system('cls')
-    if monsterSprite == 0:
-        print(monster1)
-    else:
-        print(monster1)
+
+    print(monsterimages[spriteDictionary[name]])
+
     if turn:
-        newprint("You have attacked the wild " + name + "!")
+        newprint("You have attacked a wild " + name + "!")
     elif not turn:
         newprint("A wild " + name + " has attacked you!")
 
     while True:
-        if health <=0:
+        if health <= 0:
             doomScreen()
         if hp <= 0:
             wins += 1
-            newprint("You have defeated  the " + name + "!")
+            newprint("You have defeated the " + name + "!")
             health = maxHealth
             benefit = random.randrange(0, 5)
             if benefit == 0:
@@ -145,7 +171,9 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
                 if attackDamage > maxEnemyDefence-3:
                     maxEnemyDefence += 1
             # print(maxEnemyHP, maxEnemyDamage, maxEnemyDefence)
-            time.sleep(1.5)
+            newprint("\nPress \"Enter\" to continue.")
+            input()
+            system('cls')
             break
 
         # Player's Turn
@@ -175,6 +203,8 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
                 newprint("The " + name + " is eagerly awaiting your move.")
 
             while True:
+                if turn == False:
+                    break
                 if hp <= 0:
                     break
                 newprint("What do you do?")
@@ -200,8 +230,10 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
                 elif action == 'heal':
                     if health == maxHealth:
                         newprint("You are already at max health.")
+                        break
                     elif water == 0 and food == 0:
                         newprint("You don't have any healing items.")
+                        break
                     else:
                         newprint("You have " + str(water) + " water and " + str(food) +
                                  " food. How will you heal yourself?\n(\"cancel\" to go back)")
@@ -236,8 +268,8 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
                     boolforsuccessfulitem = False
                     if len(listItems) > 0:
                         itemsstring = ""
-                        for item in listItems:
-                            itemsstring = itemsstring + item + ", "
+                        for itemy in listItems:
+                            itemsstring = itemsstring + itemy + ", "
                         newprint("Available items: " + itemsstring)
                         boolforthis = True
                         while boolforthis:
@@ -267,13 +299,14 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
                                         break
                     else:
                         newprint("You do not have any items right now.")
+                        break
                     if boolforsuccessfulitem:
                         break
 
                 elif action == 'slingshot':
                     if acorns <= 0:
                         newprint("You don't have any acorns!")
-                        break
+                        continue
                     while True:
                         if firstSling:
                             newprint("When you use your slingshot you have the chance to deal twice the ammount of damage\n"
@@ -290,17 +323,18 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
                                 print(".", end="")
                                 time.sleep(0.2)
                             print()
-                            damageYouDo = attackDamage - defence + random.randrange(0, attackDamage*2+1)
+                            damageYouDo = random.randrange(0, attackDamage*2+1)
                             if damageYouDo > attackDamage:
                                 newprint("BULLSEYE!")
                             elif damageYouDo == attackDamage:
                                 newprint("Whew!")
-                            elif damageYouDo == 0:
+                            elif damageYouDo <= 0:
                                 newprint("Oh,no! You missed!")
                                 turn = False
-                                break
                             else:
                                 newprint("Agh...")
+                            if damageYouDo<0:
+                                damageYouDo = 0
                             hp -= damageYouDo
                             newprint(
                                 "You do " + str(damageYouDo) + " points of damage. The " + name + "'s health: " + str(
@@ -316,7 +350,7 @@ def attackmewith(name, hp, damage, defence, maxdefence, thisturn, monsterSprite)
 
                 elif action == 'status':
                     newprint("Your health: " + str(health) + "\nThe " + name + "'s health: " + str(hp))
-                turn = False
+
 
         # Enemy Turn
         print()
@@ -355,6 +389,45 @@ def attack(turn):
     monName = listMonsters[random.randrange(0, len(listMonsters))]
     attackmewith(monName, maxEnemyHP, maxEnemyDamage, defenceatatart(), maxEnemyDefence, turn, spriteDictionary[monName])#random.randrange(0, 0))
 
+
+def nothingHappens():
+    youdoaction = listYouDoAction[random.randrange(0, len(listYouDoAction))]
+    youdoadjective = listYouDoAdjective[random.randrange(0, len(listYouDoAdjective))]
+    youdoobject = listYouDoObject[random.randrange(0, len(listYouDoObject))]
+    youdoplace = listYouDoPlace[random.randrange(0, len(listYouDoPlace))]
+    youdonextobject = listYouDoNextObject[random.randrange(0, len(listYouDoNextObject))]
+    newprint(youdoaction + " " + youdoadjective + " " + youdoobject + " " + youdoplace + " " + youdonextobject + ".")
+
+
+def move():
+    global food, water, acorns
+
+    randomEvent = random.randrange(0, 101)
+
+    if 0 <= randomEvent < 30:        # nothing
+        print()
+        nothingHappens()
+    elif 30 <= randomEvent < 50:      # attack
+        attack(random.getrandbits(1))
+    elif 50 <= randomEvent < 65:        # item
+        newitemgotten = listOfItems[random.randrange(0, len(listOfItems))]
+        listItems.append(newitemgotten)
+        newprint("You see something on the ground and pick it up. It appears to be a " + newitemgotten +
+                 "! \nYou decide to put the " + newitemgotten + " in your pocket. It might come in handy")
+    elif 65 <= randomEvent < 85:          # food or water
+        newchoice = random.randrange(0, 3)
+        if newchoice == 0 or newchoice == 1:
+            water += 1
+            newprint("You find some water! Your water bottles are now " + str(water))
+        else:
+            food += 1
+            newprint("You have stumbled on a deserted sandwitch. You decide to pick it up.\n"
+                     "Now you have " + str(food) + " food.")
+    elif 85 <= randomEvent <= 100:        # acorns
+        luckynumber = random.randrange(4, 11)
+        acorns += luckynumber
+        newprint("You got lucky! Some acorns were just lying around. Seems like there are\n"
+                 "just about " + str(luckynumber) + " of them. Now you have a total of " + str(acorns) + " acorns.")
 
 #
 #
@@ -417,16 +490,38 @@ attack(yesorno())
 #     Now entering wander stage
 #
 #
+newprint("You are not sure which way your home is and decide to leave it to fate.\n"
+         "Type in directions to go that way. You may find items along your path, but you\n"
+         "may also encounter enemies. It is all up to you now! Go, take the medicine to your\n"
+         "sick mother!")
+while True:
+    if wins < 20:
+        print()
+        correctInput = False
+        newprint("Which way do you go now?")
+        action = input()
 
-"""
-Here you will give commands such as 'up', 'down', etc. There will be a random event on every movement
-You can't get lost and there is no significance whatsoever to where you chose to go.
+        if action == "debug.win":
+            wins = 20
 
-Random events include:
-Find Acorns      - 15% (1-5)
-Find water       - 15% (1)
-Find Food        - 15% (1)
-Find Item        - 10% (1)
-Monster Attack   - 15% (1)
-Nothing          - 30%
-"""
+        if action == "help":
+            newprint("Type in directions in order to proceed. You can use up/down/left/right, or north/south/east/west")
+            correctInput = True
+        for item in listDirections:
+            if action == item:
+                move()
+                correctInput = True
+        if correctInput == False:
+            newprint(error)
+            correctInput = True
+    else:
+        break
+system('cls')
+newprint("You have been here for hours, but finally, you have found you way back home!\n"
+         "You give the medicine  to your mother and spend the rest of the day\n"
+         "telling her the story of your brave adventure!")
+
+newprint(" ____  _  _  ____    ____  __ _  ____ \n"
+         "(_  _)/ )( \(  __)  (  __)(  ( \(    \\\n"
+         "  )(  ) __ ( ) _)    ) _) /    / ) D (\n"
+         " (__) \_)(_/(____)  (____)\_)__)(____/")

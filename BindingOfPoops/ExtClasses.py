@@ -1,5 +1,14 @@
 from enum import Enum
 
+class Constants:
+    scr_width = 1080
+    scr_height = 720
+    fps = 60
+    debugMessage = ""
+
+    playerWidth = 56
+    playerHeight = 66
+
 class ObjectLists:
     listAllObjects = []
     listOfTears = []

@@ -2,7 +2,7 @@ from Object import *
 from Projectile import Tear
 
 isaacImages = (pygame.image.load("assets/isaac.png"), pygame.image.load("assets/isaacR.png"),
-                 pygame.image.load("assets/isaacL.png"), pygame.image.load("assets/isaacU.png"))
+               pygame.image.load("assets/isaacL.png"), pygame.image.load("assets/isaacU.png"))
 
 class Isaac (Object):
     def __init__(self):
@@ -10,22 +10,24 @@ class Isaac (Object):
         self.spriteIndex = 0
         self.sprite = isaacImages[self.spriteIndex]
         self.rect = self.sprite.get_rect()
+
         self.ypos = 300
         self.xpos = 300
-        self.speed = 5
-        self.range = 10
-        self.decel = self.speed / 2
-        self.accel = self.speed / 2
-        self.shotSpeed = 1
-        self.rangeof = 7
-        self.shotspeed = 6
-        self.tearheight = 14
-        self.tearDelay = 14
-        self.tearDelayCounter = self.tearDelay
+        self.speed = 6
+        self.decel = self.speed / 1.5
+        self.accel = self.speed / 1.5
         self.xAcc = 0.0
         self.yAcc = 0.0
         self.tempxAcc = 0.0
         self.tempyAcc = 0.0
+
+        self.range = 7
+        self.shotspeed = 6
+        self.tearheight = 14
+        self.tearDelay = 14
+        self.tearDelayCounter = self.tearDelay
+        self.tearOffset = 12
+
         self.isShooting = False
         self.pKey = pygame.key.get_pressed()
 
@@ -33,8 +35,12 @@ class Isaac (Object):
         self.pKey = pygame.key.get_pressed()
         # walking:
         self.walk()
+        # animate
         self.sprite = isaacImages[self.spriteIndex]
         # shooting:
+        self.shooting()
+
+    def shooting(self):
         if self.tearDelayCounter <= self.tearDelay:    # manage delay between tears, if you shoot a tear, the counter resets and regains value over time
             self.tearDelayCounter += Time.deltaTime * 30
 
@@ -67,6 +73,8 @@ class Isaac (Object):
                 self.xAcc = 0
             if self.xAcc < self.speed:
                 self.xAcc += self.accel/10
+            if self.xpos > Constants.scr_width - 40 - Constants.playerWidth:
+                self.xAcc = -0.1
             if not self.isShooting:          # change direction animation
                 self.spriteIndex = 1
 
@@ -75,6 +83,8 @@ class Isaac (Object):
                 self.xAcc = 0
             if self.xAcc > -self.speed:
                 self.xAcc -= self.accel/10
+            if self.xpos < 40:
+                self.xAcc = 0.1
             if not self.isShooting:  # change direction animation
                 self.spriteIndex = 2
 
@@ -83,14 +93,18 @@ class Isaac (Object):
                 self.yAcc = 0
             if self.yAcc > -self.speed:
                 self.yAcc -= self.accel/10
+            if self.ypos < 40:
+                self.yAcc = 0.1
             if not self.isShooting:  # change direction animation
                 self.spriteIndex = 3
 
         if self.pKey[K_s]:  # down
             if self.yAcc < 0:
                 self.yAcc = 0
-            if self.yAcc < self.speed and self.xpos <= pygame.display.get_init().:
+            if self.yAcc < self.speed:
                 self.yAcc += self.accel/10
+            if self.ypos > Constants.scr_height - 40 - Constants.playerHeight:
+                self.yAcc = +0.1
             if not self.isShooting:  # change direction animation
                 self.spriteIndex = 0
 
@@ -102,6 +116,7 @@ class Isaac (Object):
                     self.xAcc += 0.1
             if -0.1 <= self.xAcc <= 0.1:
                 self.xAcc = 0
+
         if not self.pKey[K_w] and not self.pKey[K_s]:    # manage deceleration for vertical input
             for i in range(0, int(self.decel)):
                 if self.yAcc > 0:
@@ -110,12 +125,14 @@ class Isaac (Object):
                     self.yAcc += 0.1
             if -0.1 <= self.yAcc <= 0.1:
                 self.yAcc = 0
+
         if self.yAcc != 0 and self.xAcc != 0:
-            self.tempyAcc = self.yAcc * (math.sqrt(2) / 2)
-            self.tempxAcc = self.xAcc * (math.sqrt(2) / 2)
+            self.tempyAcc = self.yAcc * 0.7071   # normalize diagonal movement
+            self.tempxAcc = self.xAcc * 0.7071
         else:
-            self.tempxAcc = self.xAcc
-            self.tempyAcc = self.yAcc
+            self.tempxAcc = self.xAcc   # if not diagonal set temp values to acceleration
+            self.tempyAcc = self.yAcc   # the temp values are here only to normalize the diagonal movement btw
+
         self.xpos += int(self.tempxAcc)
         self.ypos += int(self.tempyAcc)
 
@@ -125,9 +142,9 @@ class Isaac (Object):
                 self.spriteIndex = 0
 
     def shoot(self, direction):
-        newTear = Tear(direction, self)
-        ObjectLists.listAllObjects.append(newTear)
-        ObjectLists.listOfTears.append(newTear)
+        self.tearOffset = -self.tearOffset
+        new_tear = Tear(direction, self)
+
 
     def draw(self, screen):
         screen.blit(self.sprite, (self.xpos, self.ypos))

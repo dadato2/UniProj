@@ -3,6 +3,7 @@ from pygame.locals import *
 import math
 from ExtClasses import *
 
+
 class Object:
     def __init__(self):
         pass

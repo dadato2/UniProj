@@ -5,7 +5,7 @@ class debug:
 
     def __init__(self):
         pygame.font.init()
-        self.debugFont = pygame.font.SysFont('Comic Sans MS', 30)
+        self.debugFont = pygame.font.SysFont('Comic Sans MS', 40)
         self.debugtextsurface = self.debugFont.render(Constants.debugMessage, False, (0, 0, 0))
         self.arg = ""
         self.prevarg = ""

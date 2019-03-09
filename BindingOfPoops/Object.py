@@ -1,7 +1,8 @@
-import pygame
+import pygame, random
 from pygame.locals import *
 import math
 from ExtClasses import *
+from pygame_logic import makeSprite, newSprite
 
 
 class Object:

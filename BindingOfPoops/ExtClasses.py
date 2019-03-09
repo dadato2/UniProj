@@ -1,4 +1,24 @@
 from enum import Enum
+import Player, math, pygame
+
+
+
+class globalMath:
+    def __init__(self):
+        self.temp = 0
+
+    def Angle(self, originObject, targetObject):
+        return math.atan2((originObject.ypos - targetObject.ypos), (targetObject.xpos - originObject.xpos)) + math.pi / 2
+
+    def AnglePlayer(self, origin):
+        return math.atan2((origin.ypos - Global.player.ypos), (Global.player.xpos - origin.xpos)) + math.pi/2
+
+
+GlobalMath = globalMath()
+
+class Global:
+    player = None
+    Sounds = None
 
 class Constants:
     scr_width = 1080
@@ -8,6 +28,8 @@ class Constants:
 
     playerWidth = 56
     playerHeight = 66
+
+    enemycount = 0
 
 class ObjectLists:
     listAllObjects = []
@@ -37,3 +59,9 @@ class directions(Enum):
     Down = 1
     Left = 2
     Right = 3
+
+class sounds:
+    def __init__(self):
+        self.player_tear_1 = pygame.mixer.Sound("assets/sfx/tear_fire_2.wav")
+        self.tear_destroy = pygame.mixer.Sound("assets/sfx/tear_fire_1.wav")
+        self.insect_swarm = pygame.mixer.Sound("assets/sfx/insect_swarm.wav")

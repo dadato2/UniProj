@@ -2,20 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36d9d76d-f1d3-4361-b544-3198a6f5a397" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/BindingOfPoops.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BindingOfPoops.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/Debug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExtClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExtClasses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Object.py" beforeDir="false" afterPath="$PROJECT_DIR$/Object.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projectile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/isaac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/isaacL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/isaacR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/isaacU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/p5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/tear.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/tear.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/COLLECT-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/fly1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/fly2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/fly3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/fly4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/isaacBody.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/isaacBodyOriginalSize.pdn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/isaacHead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/isaacSheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/monster_010_fly.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/old/isaac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/old/isaacL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/old/isaacR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/old/isaacU.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/old/p5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/room.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/sfx/insect_swarm.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/sfx/tear_fire_1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/sfx/tear_fire_2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/tear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/Include/pyconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/SDL.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/SDL_image.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/SDL_mixer.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/SDL_ttf.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/VCRUNTIME140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_bz2.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_contextvars.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_ctypes.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_decimal.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_hashlib.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_lzma.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_multiprocessing.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_queue.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_socket.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/_ssl.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/lib2to3/Grammar.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/lib2to3/Grammar3.7.0.final.0.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/lib2to3/PatternGrammar.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/lib2to3/PatternGrammar3.7.0.final.0.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/lib2to3/tests/data/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/libcrypto-1_1-x64.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/libssl-1_1-x64.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/main.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pyexpat.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/_freetype.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/base.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/bufferproxy.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/cdrom.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/color.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/constants.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/display.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/draw.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/event.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/fastevent.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/font.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/image.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/imageext.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/joystick.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/key.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/mask.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/math.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/mixer.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/mixer_music.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/mouse.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/movie.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/overlay.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/pixelarray.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/pixelcopy.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/rect.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/rwobject.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/scrap.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/surface.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/surflock.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/time.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/pygame/transform.cp37-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/python37.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/select.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/smpeg.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main/unicodedata.pyd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +112,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="60">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -41,7 +127,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Debug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="391">
               <caret line="17" column="79" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -53,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExtClasses.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="299">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -74,11 +160,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Enemy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+            <state relative-caret-position="1058">
+              <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -89,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2880">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="-3956">
+              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -101,8 +187,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-805">
-              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+            <state relative-caret-position="353">
+              <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -112,8 +198,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Setup Script" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -137,15 +223,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ddd.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/Debug.py" />
         <option value="$PROJECT_DIR$/Object.py" />
         <option value="$PROJECT_DIR$/pygame_logic.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/ExtClasses.py" />
+        <option value="$PROJECT_DIR$/Enemy.py" />
+        <option value="$PROJECT_DIR$/TearSplash.py" />
         <option value="$PROJECT_DIR$/Player.py" />
         <option value="$PROJECT_DIR$/Projectile.py" />
-        <option value="$PROJECT_DIR$/ExtClasses.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/Enemy.py" />
       </list>
     </option>
   </component>
@@ -163,6 +250,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,7 +262,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,19 +400,19 @@
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49932885" weight="0.39943343" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.4986577" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32991204" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.5013423" side_tool="true" weight="0.39943343" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32991204" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.12684564" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.12818792" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -338,7 +425,6 @@
     <entry file="file://$PROJECT_DIR$/Launch Game.bat">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py" />
     <entry file="file://$PROJECT_DIR$/../pygamescrollings/scroll.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -349,20 +435,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Debug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="17" column="79" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1375371899/math.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="862">
           <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -376,47 +459,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="79" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ExtClasses.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="299">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Player.py">
+    <entry file="file://$PROJECT_DIR$/Enemy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2880">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state relative-caret-position="1058">
+          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TearSplash.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Projectile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-805">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        <state relative-caret-position="353">
+          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3956">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Enemy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        <state relative-caret-position="60">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

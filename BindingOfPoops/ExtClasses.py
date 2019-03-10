@@ -24,6 +24,9 @@ class Constants:
     scr_width = 1080
     scr_height = 720
     fps = 60
+    caption = "The Binding of Poops"
+    iconImage = "icon.png"
+
     debugMessage = ""
 
     playerWidth = 56

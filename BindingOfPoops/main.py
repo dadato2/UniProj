@@ -6,23 +6,21 @@ from Debug import *
 lastTime = 0
 nowTime = 0
 
-caption = "The Binding of Poops"
-iconImage = "icon.png"
+
 roomImage = pygame.image.load("assets/room.png")
 
 
 pygame.init()
 pygame.mixer.init()
 time = pygame.time.Clock()
-pygame.display.set_caption(caption)
+pygame.display.set_caption(Constants.caption)
 screen = pygame.display.set_mode((Constants.scr_width, Constants.scr_height))
-gameIcon = pygame.image.load(iconImage)
+gameIcon = pygame.image.load(Constants.iconImage)
 pygame.display.set_icon(gameIcon)
 Debug = debug()
 Global.Sounds = sounds()
 
 player = Isaac()
-Global.player = player
 
 for i in range(10, 20):
     enemy = Enemy(random.randrange(40, Constants.scr_width - 40), random.randrange(40, Constants.scr_height - 40))

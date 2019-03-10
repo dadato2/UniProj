@@ -8,14 +8,17 @@ isaacBody = tmpisaacBody.images
 
 class Isaac (Object):
     def __init__(self):
+
         ObjectLists.listAllObjects.append(self)
+        Global.player = self
         self.spriteIndexHead = 0
         self.spriteHead = isaacHead[self.spriteIndexHead]
         self.spriteIndexBody = 0
         self.spriteIndexAddTen = 0
         self.spriteBody = isaacBody[self.spriteIndexBody]
         self.spriteIndexBodyDelay = 0
-        
+        self.height = 66
+
         self.rect = self.spriteHead.get_rect()
         self.Sound_tear_1 = Global.Sounds.player_tear_1
 
@@ -36,7 +39,7 @@ class Isaac (Object):
         self.tearheight = 14
         self.tearDelay = 14
         self.tearDelayCounter = self.tearDelay
-        self.tearOffset = 12
+        self.tearOffset = 10
         self.tearAnimTimer = 0
 
         self.isShooting = False

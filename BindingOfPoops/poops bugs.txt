@@ -1,0 +1,1 @@
+pressing W, D and left arrow messes up input

@@ -22,6 +22,7 @@ class Enemy (Object):
         self.xpos = x
         self.ypos = y
         self.directionPlayer = 0
+        self.distancePlayer = 0
         self.dirx = 0
         self.diry = 0
         self.canMove = 1
@@ -42,6 +43,10 @@ class Enemy (Object):
             pygame.mixer.Channel(1).play(self.enemyBuzz)
             # self.enemyBuzz.play()
             self.soundLooper = 0.6
+
+        self.distancePlayer = math.sqrt(math.fabs((self.xpos - Global.player.xpos) * (self.xpos - Global.player.xpos) + (
+                    self.ypos - Global.player.ypos) * (self.xpos - Global.player.xpos)))
+
         if self.speed < self.maxSpeed:
             self.speed += Time.deltaTime
         if self.canMove > 0:
@@ -53,7 +58,8 @@ class Enemy (Object):
             ObjectLists.listAllObjects.remove(self)
         self.rect = Rect(self.xpos, self.ypos, self.squareSize, self.squareSize)
         self.animate()
-        if self.canMove <= 0:
+
+        if self.canMove <= 0 and self.distancePlayer >=30:
             self.moveTowardPlayer()
 
 
@@ -98,8 +104,6 @@ class Enemy (Object):
                 self.buzz()
             self.animationTimer = 0
         self.sprite = enemyImage[self.imageIndex]
-
-
 
     def draw(self, screen):
         screen.blit(self.sprite, (self.offsetXpos, self.offsetYpos))
